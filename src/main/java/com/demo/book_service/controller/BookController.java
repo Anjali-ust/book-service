@@ -22,16 +22,16 @@ public class BookController {
 	
 	@GetMapping("/books")
 	public List<Book> getAllBooks() {
-		return this.bookRepo.findAll();
+		return bookRepo.findAll();
 	}
 	
 	@GetMapping("/books/{bid}")
 	public Book getABooks(@PathVariable int bid) {
-		return this.bookRepo.findById(bid).get();
+		return bookRepo.findById(bid).get();
 	}
 	
 	@PostMapping("/books")
 	public Book addBook(@RequestBody Book newBook) {
-		return this.bookRepo.saveAndFlush(newBook);
+		return bookRepo.saveAndFlush(newBook);
 	}
 }
